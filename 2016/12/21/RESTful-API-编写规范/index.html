@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hello," />
+  <meta name="keywords" content="Node.js,RESTful," />
 
 
 
@@ -84,19 +84,112 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="Request
+
+
+URL
+HTTP Verb
+Action
+
+
+
+
+/api/book
+GET
+获取book列表
+
+
+/api/book/:id
+GET
+查看某个具体的book
+
+
+/api/book
+POST
+新建一个book
+
+
+/api/book/:id
+PUT
+更新ticket
+
+
+/api/book/:id
+DELETE
+删除book">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://wangze1994.github.io/2016/10/01/hello-world/index.html">
+<meta property="og:title" content="RESTful API 编写规范">
+<meta property="og:url" content="https://wangze1994.github.io/2016/12/21/RESTful-API-编写规范/index.html">
 <meta property="og:site_name" content="粒投泽似补唠格">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-12-20T05:22:36.000Z">
+<meta property="og:description" content="Request
+
+
+URL
+HTTP Verb
+Action
+
+
+
+
+/api/book
+GET
+获取book列表
+
+
+/api/book/:id
+GET
+查看某个具体的book
+
+
+/api/book
+POST
+新建一个book
+
+
+/api/book/:id
+PUT
+更新ticket
+
+
+/api/book/:id
+DELETE
+删除book">
+<meta property="og:updated_time" content="2016-12-21T03:28:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="RESTful API 编写规范">
+<meta name="twitter:description" content="Request
+
+
+URL
+HTTP Verb
+Action
+
+
+
+
+/api/book
+GET
+获取book列表
+
+
+/api/book/:id
+GET
+查看某个具体的book
+
+
+/api/book
+POST
+新建一个book
+
+
+/api/book/:id
+PUT
+更新ticket
+
+
+/api/book/:id
+DELETE
+删除book">
 
 
 
@@ -117,9 +210,9 @@ Quick">
 
 
 
-  <link rel="canonical" href="https://wangze1994.github.io/2016/10/01/hello-world/"/>
+  <link rel="canonical" href="https://wangze1994.github.io/2016/12/21/RESTful-API-编写规范/"/>
 
-  <title> Hello World | 粒投泽似补唠格 </title>
+  <title> RESTful API 编写规范 | 粒投泽似补唠格 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +362,7 @@ Quick">
             
             
               
-                Hello World
+                RESTful API 编写规范
               
             
           </h1>
@@ -281,19 +374,38 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-01T11:09:27+08:00" content="2016-10-01">
-              2016-10-01
+            <time itemprop="dateCreated" datetime="2016-12-21T10:07:13+08:00" content="2016-12-21">
+              2016-12-21
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/01/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/01/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2016/12/21/RESTful-API-编写规范/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/21/RESTful-API-编写规范/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -321,16 +433,144 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+        <h3 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h3><table>
+<thead>
+<tr>
+<th>URL</th>
+<th style="text-align:center">HTTP Verb</th>
+<th style="text-align:right">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/api/book</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:right">获取book列表</td>
+</tr>
+<tr>
+<td>/api/book/:id</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:right">查看某个具体的book</td>
+</tr>
+<tr>
+<td>/api/book</td>
+<td style="text-align:center">POST</td>
+<td style="text-align:right">新建一个book</td>
+</tr>
+<tr>
+<td>/api/book/:id</td>
+<td style="text-align:center">PUT</td>
+<td style="text-align:right">更新ticket</td>
+</tr>
+<tr>
+<td>/api/book/:id</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:right">删除book</td>
+</tr>
+</tbody>
+</table>
 <a id="more"></a>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<h3 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h3><p>status code</p>
+<blockquote>
+<p>GET</p>
+</blockquote>
+<ul>
+<li>200（OK） - 表示已在响应中发出</li>
+<li>204（无内容） - 资源有空表示</li>
+<li>301（Moved Permanently） - 资源的URI已被更新</li>
+<li>303（See Other） - 其他（如，负载均衡）</li>
+<li>304（not modified）- 资源未更改（缓存）</li>
+<li>400 （bad request）- 指代坏请求（如，参数错误）</li>
+<li>404 （not found）- 资源不存在</li>
+<li>406 （not acceptable）- 服务端不支持所需表示</li>
+<li>500 （internal server error）- 通用错误响应</li>
+<li>503 （Service Unavailable）- 服务端当前无法处理请求</li>
+</ul>
+<blockquote>
+<p>POST</p>
+</blockquote>
+<ul>
+<li>200（OK）- 如果现有资源已被更改</li>
+<li>201（created）- 如果新资源被创建</li>
+<li>202（accepted）- 已接受处理请求但尚未完成（异步处理）</li>
+<li>301（Moved Permanently）- 资源的URI被更新</li>
+<li>303（See Other）- 其他（如，负载均衡）</li>
+<li>400（bad request）- 指代坏请求</li>
+<li>404 （not found）- 资源不存在</li>
+<li>406 （not acceptable）- 服务端不支持所需表示</li>
+<li>409 （conflict）- 通用冲突</li>
+<li>412 （Precondition Failed）- 前置条件失败（如执行条件更新时的冲突）</li>
+<li>415 （unsupported media type）- 接受到的表示不受支持</li>
+<li>500 （internal server error）- 通用错误响应</li>
+<li>503 （Service Unavailable）- 服务当前无法处理请求</li>
+</ul>
+<blockquote>
+<p>PUT</p>
+</blockquote>
+<ul>
+<li>200 （OK）- 如果已存在资源被更改</li>
+<li>201 （created）- 如果新资源被创建</li>
+<li>301（Moved Permanently）- 资源的URI已更改</li>
+<li>303 （See Other）- 其他（如，负载均衡）</li>
+<li>400 （bad request）- 指代坏请求</li>
+<li>404 （not found）- 资源不存在</li>
+<li>406 （not acceptable）- 服务端不支持所需表示</li>
+<li>409 （conflict）- 通用冲突</li>
+<li>412 （Precondition Failed）- 前置条件失败（如执行条件更新时的冲突）</li>
+<li>415 （unsupported media type）- 接受到的表示不受支持</li>
+<li>500 （internal server error）- 通用错误响应</li>
+<li>503 （Service Unavailable）- 服务当前无法处理请求</li>
+</ul>
+<blockquote>
+<p>DELETE</p>
+</blockquote>
+<ul>
+<li>200 （OK）- 资源已被删除</li>
+<li>301 （Moved Permanently）- 资源的URI已更改</li>
+<li>303 （See Other）- 其他，如负载均衡</li>
+<li>400 （bad request）- 指代坏请求</li>
+<li>404 （not found）- 资源不存在</li>
+<li>409 （conflict）- 通用冲突</li>
+<li>500 （internal server error）- 通用错误响应</li>
+<li>503 （Service Unavailable）- 服务端当前无法处理请求</li>
+</ul>
+<blockquote>
+<p>常用的Response要包含的数据和状态码</p>
+</blockquote>
+<ul>
+<li>当GET, PUT请求成功时，要返回对应的数据，及状态码200，即SUCCESS</li>
+<li>当POST创建数据成功时，要返回创建的数据，及状态码201，即CREATED</li>
+<li>当DELETE删除数据成功时，不返回数据，状态码要返回204，即NO CONTENT</li>
+<li>当GET 不到数据时，状态码要返回404，即NOT FOUND</li>
+<li>任何时候，如果请求有问题，如校验请求数据时发现错误，要返回状态码 400，即BAD REQUEST</li>
+<li>当API 请求需要用户认证时，如果request中的认证信息不正确，要返回状态码 401，即NOT AUTHORIZED</li>
+<li>当API 请求需要验证用户权限时，如果当前用户无相应权限，要返回状态码 403，即FORBIDDEN</li>
+</ul>
+<blockquote>
+<p>就像html错误页面能够显示错误信息一样，API 也应该能返回可读的错误信息–它应该和一般的资源格式一致。API应该始终返回相应的状态码，以反映服务器或者请求的状态。API的错误码可以分为两部分，400系列和500系列，400系列表明客户端错误：如错误的请求格式等。500系列表示服务器错误。API应该至少将所有的400系列的错误以json形式返回。</p>
+<p>当API返回非2XX的HTTP响应时，应该采用统一的响应信息，格式如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 400 Bad Request</div><div class="line">Content-Type: application/json;charset=UTF-8</div><div class="line">&#123;</div><div class="line">    &quot;code&quot;:&quot;INVALID_ARGUMENT&quot;,</div><div class="line">    &quot;msg&quot;:&quot;&#123;error message&#125;&quot;,</div><div class="line">    &quot;document&quot;:&quot;https://www.founder.com/error-code/400&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>HTTP Header Code：符合HTTP响应的状态码。</li>
+<li>code：用来表示某类错误，比如缺少参数等。是对HTTP Header Code的补充，根据自己的需要自己定义。</li>
+<li>msg：错误信息的摘要，应该是对用户处理错误有用的信息。</li>
+<li>document：错误解决的文档。</li>
+</ul>
+<h3 id="关于HTTP头序列化格式"><a href="#关于HTTP头序列化格式" class="headerlink" title="关于HTTP头序列化格式"></a>关于HTTP头序列化格式</h3><p>在客户端和服务端都需要知道使用什么格式来进行通信，这个格式应该在HTTP头中指定:</p>
+<ul>
+<li><p>Content-Type：定义请求的格式</p>
+</li>
+<li><p>Accept ：定义允许的响应格式的列表</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">req.accepts(types)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>该方法用于检查请求的指定内容类型,基于HTTP请求的头部,返回最匹配的类型.如果没有可接受的指定内容类型,将会返回undefined(这种情况下,应该返回406状态码”Not Acceptable”);</p>
+</blockquote>
+<h3 id="项目中具体应用方式-Express为例"><a href="#项目中具体应用方式-Express为例" class="headerlink" title="项目中具体应用方式(Express为例)"></a>项目中具体应用方式(Express为例)</h3><blockquote>
+<p>Routes</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var express = require(&apos;express&apos;);</div><div class="line">var router = express.Router();</div><div class="line"></div><div class="line">var db = require(&apos;../queries&apos;);</div><div class="line"></div><div class="line"></div><div class="line">router.get(&apos;/api/book&apos;, db.getAllBook);</div><div class="line">router.get(&apos;/api/book/:id&apos;, db.getSingleBook);</div><div class="line">router.post(&apos;/api/book&apos;, db.createBook);</div><div class="line">router.put(&apos;/api/book/:id&apos;, db.updateBook);</div><div class="line">router.delete(&apos;/api/book/:id&apos;, db.removeBook);</div><div class="line"></div><div class="line"></div><div class="line">module.exports = router;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -374,7 +614,9 @@ Quick">
       
         <div class="post-tags">
           
-            <a href="/tags/Hello/" rel="tag">#Hello</a>
+            <a href="/tags/Node-js/" rel="tag">#Node.js</a>
+          
+            <a href="/tags/RESTful/" rel="tag">#RESTful</a>
           
         </div>
       
@@ -383,13 +625,13 @@ Quick">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/12/20/CentOS服务器Node-js环境搭建/" rel="next" title="CentOS服务器Node.js环境搭建">
+                <i class="fa fa-chevron-left"></i> CentOS服务器Node.js环境搭建
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/15/MongoDB定时备份/" rel="prev" title="MongoDB定时备份">
-                MongoDB定时备份 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -415,8 +657,8 @@ Quick">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/01/hello-world/"
-           data-title="Hello World" data-url="https://wangze1994.github.io/2016/10/01/hello-world/">
+      <div class="ds-thread" data-thread-key="2016/12/21/RESTful-API-编写规范/"
+           data-title="RESTful API 编写规范" data-url="https://wangze1994.github.io/2016/12/21/RESTful-API-编写规范/">
       </div>
     
   </div>
@@ -527,7 +769,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Request"><span class="nav-number">1.</span> <span class="nav-text">Request</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Response"><span class="nav-number">2.</span> <span class="nav-text">Response</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于HTTP头序列化格式"><span class="nav-number">3.</span> <span class="nav-text">关于HTTP头序列化格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目中具体应用方式-Express为例"><span class="nav-number">4.</span> <span class="nav-text">项目中具体应用方式(Express为例)</span></a></li></ol></div>
             
           </div>
         </section>
