@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MongoDB," />
+  <meta name="keywords" content="Linux," />
 
 
 
@@ -84,22 +84,28 @@
 
 
 
-<meta name="description" content="背景说来惭愧,由于公司产品的数据存储大多存储在医院HIS系统,我们接口服务层Mongo数据库大多只作为缓存使用,便一直没有意识到数据备份的重要性。直到前些天数据发生遗失(不说原因了太丢人🙊)
+<meta name="description" content="DNS配置在CentOS环境下,直接修改/etc/resolv.conf文件配置DNS,在重启后会恢复到原来的状态。所以可以通过ifconfig命令查看当前网卡信息，直接修改网卡配置文件。
 
-直接上脚本:">
+进入网卡配置文件目录，修改配置文件
+
+12cd /etc/sysconfig/network-scripts/vi ifcfg-eth1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MongoDB定时备份">
-<meta property="og:url" content="https://wangze1994.github.io/2016/10/15/MongoDB定时备份/index.html">
+<meta property="og:title" content="CentOS服务器Node.js环境搭建">
+<meta property="og:url" content="https://wangze1994.github.io/2016/12/17/CentOS服务器Node-js环境搭建/index.html">
 <meta property="og:site_name" content="粒投泽似补唠格">
-<meta property="og:description" content="背景说来惭愧,由于公司产品的数据存储大多存储在医院HIS系统,我们接口服务层Mongo数据库大多只作为缓存使用,便一直没有意识到数据备份的重要性。直到前些天数据发生遗失(不说原因了太丢人🙊)
+<meta property="og:description" content="DNS配置在CentOS环境下,直接修改/etc/resolv.conf文件配置DNS,在重启后会恢复到原来的状态。所以可以通过ifconfig命令查看当前网卡信息，直接修改网卡配置文件。
 
-直接上脚本:">
-<meta property="og:updated_time" content="2016-12-20T05:20:39.000Z">
+进入网卡配置文件目录，修改配置文件
+
+12cd /etc/sysconfig/network-scripts/vi ifcfg-eth1">
+<meta property="og:updated_time" content="2016-12-21T06:43:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MongoDB定时备份">
-<meta name="twitter:description" content="背景说来惭愧,由于公司产品的数据存储大多存储在医院HIS系统,我们接口服务层Mongo数据库大多只作为缓存使用,便一直没有意识到数据备份的重要性。直到前些天数据发生遗失(不说原因了太丢人🙊)
+<meta name="twitter:title" content="CentOS服务器Node.js环境搭建">
+<meta name="twitter:description" content="DNS配置在CentOS环境下,直接修改/etc/resolv.conf文件配置DNS,在重启后会恢复到原来的状态。所以可以通过ifconfig命令查看当前网卡信息，直接修改网卡配置文件。
 
-直接上脚本:">
+进入网卡配置文件目录，修改配置文件
+
+12cd /etc/sysconfig/network-scripts/vi ifcfg-eth1">
 
 
 
@@ -120,9 +126,9 @@
 
 
 
-  <link rel="canonical" href="https://wangze1994.github.io/2016/10/15/MongoDB定时备份/"/>
+  <link rel="canonical" href="https://wangze1994.github.io/2016/12/17/CentOS服务器Node-js环境搭建/"/>
 
-  <title> MongoDB定时备份 | 粒投泽似补唠格 </title>
+  <title> CentOS服务器Node.js环境搭建 | 粒投泽似补唠格 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +278,7 @@
             
             
               
-                MongoDB定时备份
+                CentOS服务器Node.js环境搭建
               
             
           </h1>
@@ -284,8 +290,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-15T12:18:23+08:00" content="2016-10-15">
-              2016-10-15
+            <time itemprop="dateCreated" datetime="2016-12-17T11:09:27+08:00" content="2016-12-17">
+              2016-12-17
             </time>
           </span>
 
@@ -298,8 +304,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/MongoDB/" itemprop="url" rel="index">
-                    <span itemprop="name">MongoDB</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -314,8 +320,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/15/MongoDB定时备份/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/MongoDB定时备份/" itemprop="commentsCount"></span>
+                <a href="/2016/12/17/CentOS服务器Node-js环境搭建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/17/CentOS服务器Node-js环境搭建/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -343,14 +349,71 @@
       
 
       
-        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>说来惭愧,由于公司产品的数据存储大多存储在医院HIS系统,我们接口服务层Mongo数据库大多只作为缓存使用,便一直没有意识到数据备份的重要性。<br>直到前些天数据发生遗失(不说原因了太丢人🙊)</p>
+        <h3 id="DNS配置"><a href="#DNS配置" class="headerlink" title="DNS配置"></a>DNS配置</h3><p>在<code>CentOS</code>环境下,直接修改<code>/etc/resolv.conf</code>文件配置<code>DNS</code>,在重启后会恢复到原来的状态。所以可以通过<code>ifconfig</code>命令查看当前网卡信息，直接修改网卡配置文件。</p>
 <blockquote>
-<p>直接上脚本:</p>
+<p>进入网卡配置文件目录，修改配置文件</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /etc/sysconfig/network-scripts/</div><div class="line">vi ifcfg-eth1</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">DB_HOST=&quot;127.0.0.1&quot;</div><div class="line"></div><div class="line">DB_NAME=&quot;node_user&quot;</div><div class="line"></div><div class="line">OUT_DIR=&quot;/data/backup/mongod_bak/mongod_bak_now&quot; #临时备份目录</div><div class="line"></div><div class="line">TAR_DIR=&quot;/data/backup/mongod_bak/mongod_bak_list&quot; #备份存放路径</div><div class="line"></div><div class="line">DATE=$(date +%Y_%m_%d) #获取当前系统时间</div><div class="line"></div><div class="line">echo &quot;-----当前时间为$DATE-----&quot;</div><div class="line"></div><div class="line">DAYS=7 #DAYS=7代表删除7天前的备份，即只保留最近7天的备份</div><div class="line"></div><div class="line">TAR_BAK=&quot;mongod_bak_$DATE.tar.gz&quot; #最终保存的数据库备份文件名</div><div class="line"></div><div class="line">cd $OUT_DIR</div><div class="line"></div><div class="line">echo &quot;-----删除原有备份文件-----&quot;</div><div class="line"></div><div class="line">find $OUT_DIR/ -print</div><div class="line"></div><div class="line">rm -rf $OUT_DIR/*</div><div class="line"></div><div class="line">mkdir -p $OUT_DIR/$DATE</div><div class="line"></div><div class="line">echo &quot;-----开始备份全部数据库-----&quot;</div><div class="line"></div><div class="line">mongodump -h $DB_HOST -o $OUT_DIR/$DATE #备份全部数据库</div><div class="line"></div><div class="line">echo &quot;-----开始压缩备份文件-----&quot;</div><div class="line"></div><div class="line">tar -zcvf $TAR_DIR/$TAR_BAK $OUT_DIR/$DATE #压缩为.tar.gz格式</div><div class="line"></div><div class="line">echo &quot;-----删除7天前的备份文件-----&quot;</div><div class="line"></div><div class="line">find $TAR_DIR/ -mtime +$DAYS -print #删除7天前的备份文件</div></pre></td></tr></table></figure>
 <blockquote>
-<p>执行<code>crontab -e</code>编辑定时时间指向脚本文件</p>
+<p>添加DNS</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">DNS1=223.5.5.5</div><div class="line">DNS2=223.6.6.6</div><div class="line">DNS3=8.8.8.8</div></pre></td></tr></table></figure>
+<blockquote>
+<p>保存并重启网络服务</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service network restart</div></pre></td></tr></table></figure>
+<h3 id="更新yum源"><a href="#更新yum源" class="headerlink" title="更新yum源"></a>更新yum源</h3><blockquote>
+<p>删除原有yum源</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -aq | grep yum|xargs rpm -e --nodeps</div></pre></td></tr></table></figure>
+<blockquote>
+<p>下载新的yum安装包</p>
+</blockquote>
+<p><a href="http://mirrors.163.com/centos/6/os/x86_64/Packages/" target="_blank" rel="external">网易yum</a></p>
+<ul>
+<li>python-iniparse</li>
+<li>yum-metadata</li>
+<li>yum</li>
+<li>yum-plugin-fastestmirror</li>
+</ul>
+<h3 id="安装yum软件包"><a href="#安装yum软件包" class="headerlink" title="安装yum软件包"></a>安装yum软件包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -ivh --nodeps</div></pre></td></tr></table></figure>
+<blockquote>
+<p>linux 使用rpm安装软件时,遇到”warning: </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID fd431d51: NOK</div></pre></td></tr></table></figure>
+<blockquote>
+<p>解决方式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /etc/pki/rpm-gpg/ </div><div class="line">wget http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-6 </div><div class="line">rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6</div></pre></td></tr></table></figure>
+<h3 id="更改yum源"><a href="#更改yum源" class="headerlink" title="更改yum源"></a>更改yum源</h3><blockquote>
+<p><a href="http://mirrors.163.com/.help/CentOS6-Base-163.repo" target="_blank" rel="external">使用网易的CentOS镜像源</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /etc/yum.repos.d/</div><div class="line">wget http://mirrors.163.com/.help/CentOS6-Base-163.repo</div><div class="line">vi CentOS6-Base-163.repo</div></pre></td></tr></table></figure>
+<ul>
+<li>把文件里面的&#36;releasever全部替换为版本号，即6 最后保存</li>
+</ul>
+<h3 id="清理yum缓存"><a href="#清理yum缓存" class="headerlink" title="清理yum缓存"></a>清理yum缓存</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># yum clean all</div><div class="line"># yum makecache</div></pre></td></tr></table></figure>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -</div><div class="line">yum -y install nodejs</div><div class="line">yum install gcc-c++ make</div></pre></td></tr></table></figure>
+<h3 id="安装MongoDB"><a href="#安装MongoDB" class="headerlink" title="安装MongoDB"></a>安装MongoDB</h3><blockquote>
+<p>创建<code>/etc/yum.repos.d/mongodb-org-3.4.repo</code>文件.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[mongodb-org-3.4]</div><div class="line">name=MongoDB Repository</div><div class="line">baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/</div><div class="line">gpgcheck=1</div><div class="line">enabled=1</div><div class="line">gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc</div></pre></td></tr></table></figure>
+<blockquote>
+<p>安装最新的稳定版本的<code>MongoDB</code>，发出下面的命令：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum install -y mongodb-org</div></pre></td></tr></table></figure>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum install git</div></pre></td></tr></table></figure>
+<h3 id="生成SSH-Key"><a href="#生成SSH-Key" class="headerlink" title="生成SSH Key"></a>生成SSH Key</h3><blockquote>
+<p>查看是否已经有了<code>ssh</code>密钥：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div></pre></td></tr></table></figure>
+<blockquote>
+<p>生成<code>key</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa</div></pre></td></tr></table></figure>
+<blockquote>
+<p>得到两个文件：<code>id_rsa</code>和<code>id_rsa.pub</code></p>
 </blockquote>
 
       
@@ -395,7 +458,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MongoDB/" rel="tag">#MongoDB</a>
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
           
         </div>
       
@@ -404,16 +467,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/01/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/10/15/MongoDB定时备份/" rel="next" title="MongoDB定时备份">
+                <i class="fa fa-chevron-left"></i> MongoDB定时备份
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/17/CentOS服务器Node-js环境搭建/" rel="prev" title="CentOS服务器Node.js环境搭建">
-                CentOS服务器Node.js环境搭建 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/18/解决js异步流程方式比较/" rel="prev" title="解决js异步流程方式比较">
+                解决js异步流程方式比较 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -440,8 +503,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/15/MongoDB定时备份/"
-           data-title="MongoDB定时备份" data-url="https://wangze1994.github.io/2016/10/15/MongoDB定时备份/">
+      <div class="ds-thread" data-thread-key="2016/12/17/CentOS服务器Node-js环境搭建/"
+           data-title="CentOS服务器Node.js环境搭建" data-url="https://wangze1994.github.io/2016/12/17/CentOS服务器Node-js环境搭建/">
       </div>
     
   </div>
@@ -552,7 +615,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS配置"><span class="nav-number">1.</span> <span class="nav-text">DNS配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新yum源"><span class="nav-number">2.</span> <span class="nav-text">更新yum源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装yum软件包"><span class="nav-number">3.</span> <span class="nav-text">安装yum软件包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改yum源"><span class="nav-number">4.</span> <span class="nav-text">更改yum源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清理yum缓存"><span class="nav-number">5.</span> <span class="nav-text">清理yum缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">6.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装MongoDB"><span class="nav-number">7.</span> <span class="nav-text">安装MongoDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">8.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成SSH-Key"><span class="nav-number">9.</span> <span class="nav-text">生成SSH Key</span></a></li></ol></div>
             
           </div>
         </section>
