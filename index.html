@@ -337,43 +337,13 @@
 
       
         
-          
-            <h3 id="实践背景"><a href="#实践背景" class="headerlink" title="实践背景"></a>实践背景</h3><p>使用Docker之前:<br>    今天又有了一家医院,小泽,明儿先去**医院把服务器环境搭建好!<br>    订票,收拾行李,带上电脑洗漱干净准备出发。<br>    升级yum,安装各种依赖包,安装Node.js,安装MongoDB,配置数据库,安装Git,配置Nginx代理……<br>    顺利的话半天时间应该差不多了,<br>    当然,与医院打交道,通常都是不顺利的。<br>    对不起,我们的服务器是Windows的……<br>    好了,</p>
-<p> 去吧,Docker!</p>
-<p> 我只是Docker小白,所以就不对Docker作介绍了。把他当做轻量级虚拟机就好了。官网上写道:<br> Build, Ship, and Run Any App, Anywhere<br> 跨平台,一次配置到处使用,<br> 这两点就够了。</p>
-<h3 id="实践过程"><a href="#实践过程" class="headerlink" title="实践过程"></a>实践过程</h3><p>我是在本机MacOS使用的。所以也是以MacOS为例。</p>
-<blockquote>
-<p>安装Docker</p>
-<p>配置加速器(推荐Daocloud)</p>
-</blockquote>
-<p>右键点击桌面顶栏的 docker 图标，选择 Preferences ，在 Advanced 标签下的 Registry mirrors 列表中加入下面的镜像地址:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://51796a53.m.daocloud.io</div></pre></td></tr></table></figure>
-<p>点击 Apply &amp; Restart 按钮使设置生效。</p>
-<blockquote>
-<p>下载node镜像</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker pull node</div></pre></td></tr></table></figure>
-<blockquote>
-<p>运行</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --rm -ti -p 3002:3000 wangze/loopback_app:one /bin/bash</div></pre></td></tr></table></figure>
-<blockquote>
-<p>在项目中配置Dockerfile</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">FROM node:latest</div><div class="line">RUN mkdir -p /var/app</div><div class="line">WORKDIR /var/app</div><div class="line">RUN npm i -g pm2</div><div class="line">COPY . /var/app/</div><div class="line">EXPOSE 3000</div><div class="line">CMD pm2 start server/server.js</div></pre></td></tr></table></figure>
-<p><code>FROM</code> 指定基础image,构建指令，必须指定且需要在Dockerfile其他指令的前面。后续的指令都依赖于该指令指定的image。FROM指令指定的基础image可以是官方远程仓库中的，也可以位于本地仓库。</p>
-<p><code>RUN</code> 命令在镜像中创建项目文件夹</p>
-<p><code>WORKDIR</code> 切换到工作目录</p>
-<p><code>COPY</code> 指令用来复制本地主机的文件到容器中,这里把我们项目目录本身，即当前目录 <code>.</code> 拷贝至容器的 <code>/app</code> 位置。然后通过指令 <code>WORKDIR</code> 将 <code>/app</code> 目录设为工作目录。</p>
-<p><code>EXPOSE</code> 作为一个服务，来让外部通过端口来访问，通过 <code>EXPOSE</code> 指令来指定端口号。</p>
-<p><code>CMD</code> 执行命令。</p>
-<blockquote>
-<p>构建并运行镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker build -t wangze/loopback_app:one .</div><div class="line">docker run -d -p 3001:3000 wangze/loopback_app:one</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>构建完成后打开浏览器输入<a href="http://localhost:3001,失败了。" target="_blank" rel="external">http://localhost:3001,失败了。</a><br>查看原因<br>输入命令<code>docker ps -a</code>发现:<br><img src="images/docker_img.png" alt="docker"><br>刚启动就停止了。想想为什么,其实也容易理解。pm2让node在后台运行,但是-d参数使Docker容器后台运行,所以就必须有一个前台进程。如果没有一直挂起的命令,就是会自动退出的。<br>要可以使用pm2-docker命令替换pm2.<br>将Dockerfile中最后一句修改为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CMD pm2-docker start server/server.js</div></pre></td></tr></table></figure></p>
-<p>修改后重新构建运行镜像。打开浏览器成功可以响应。</p>
-
-          
+          <h3 id="实践背景"><a href="#实践背景" class="headerlink" title="实践背景"></a>实践背景</h3><p>使用Docker之前:<br>    今天又有了一家医院,小泽,明儿先去**医院把服务器环境搭建好!<br>    订票,收拾行李,带上电脑洗漱干净准备出发。<br>    升级yum,安装各种依赖包,安装Node.js,安装MongoDB,配置数据库,安装Git,配置Nginx代理……<br>    顺利的话半天时间应该差不多了,<br>    当然,与医院打交道,通常都是不顺利的。<br>    对不起,我们的服务器是Windows的……<br>    好了,</p>
+<p> 去吧,Docker!<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/22/Docker实践/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
