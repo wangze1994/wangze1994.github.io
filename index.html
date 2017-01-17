@@ -268,6 +268,129 @@
             
               
                 
+                <a class="post-title-link" href="/2017/01/12/微信小程序日历📅实现/" itemprop="url">
+                  微信小程序日历📅实现
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-12T16:01:57+08:00" content="2017-01-12">
+              2017-01-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/微信小程序/" itemprop="url" rel="index">
+                    <span itemprop="name">微信小程序</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/12/微信小程序日历📅实现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/12/微信小程序日历📅实现/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>1月9号小程序正式上线,在使用携程去哪儿等小程序过后,决定自己做一个小程序练练手,鉴于只是为了练手小程序前端写法所以使用了公司的挂号API。小程序主打功能的简洁,所以自己也是尽量简化了原有APP的挂号流程。过程中,想要将预约挂号做成日历形式,更加直观的显示号源信息。</p>
+<h3 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h3><p><img src="http://docker-1253141962.costj.myqcloud.com/rili.png?sign=vIjO8/+Y6TQhZ+4VxVeMwjvlB/9hPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjM0MTA2JnQ9MTQ4NDY0MjEwNiZyPTEyNDY3MjA0ODcmZj0vcmlsaS5wbmcmYj1kb2NrZXI=" alt="rili"><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/01/12/微信小程序日历📅实现/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/01/05/搭建Docker-Jenkins-Node-js自动化部署环境/" itemprop="url">
                   搭建Docker+Jenkins+Node.js自动化部署环境
                 </a>
@@ -337,109 +460,13 @@
 
       
         
-          
-            <h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><blockquote>
-<p>两台ubuntu服务器 (一台搭建Jenkins客户端服务,另一台作为生产环境)<br>服务器安装开通ssh<br>服务器安装Docker(<a href="https://docs.docker.com/engine/installation/linux/" target="_blank" rel="external">linux服务器安装教程</a>)<br>docker镜像平台为dockerhub(使用<a href="http://www.daocloud.io/" target="_blank" rel="external">Daocloud</a>加速器)</p>
-</blockquote>
-<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><ol>
-<li>服务器拉取最新Jenkins镜像: <code>docker pull jenkins:latest</code></li>
-<li>服务器运行Jenkins容器:<code>sudo docker run -d --name jenkins_node -p 8082:8080 -p 50000:50000 -v /var/jenkins_node:/var/jenkins_home jenkins:latest</code></li>
-</ol>
-<ul>
-<li>这条命令表示:在后台运行一个基于jenkins:latest镜像的容器, 容器的名字叫做 jenkins_node ,把容器的8080端口映射为8082端口，并且把服务器上的/var/jenkins_node目录挂在到docker容器上的/var/jenkins_home目录</li>
-<li><code>-d</code> 后台运行docker容器<br>如果不加-d则，容器运行会占用此终端，如果终端关闭，则容器也相应关闭，jenkins就无法访问了。加上-d,容器会在后台运行。</li>
-<li><code>--name</code> 为容器起个别名<br>如果不起别名，则系统会默认分配一个随机别名，起了别名后，后续会通过该别名管理该docker容器，也就是管理jenkins。</li>
-<li><code>-p</code> docker容器端口映射<br>jenkins服务是运行在docker里的，docker默认不对外暴露端口的</li>
-<li><code>-v</code> 文件挂载<br>如果不挂载，则jenkins所有log、用户配置文件都会在docker容器内，如果容器销毁，则jenkins得重新配置一遍。挂载出来方便jenkins迁移以及管理</li>
-<li><p>查看运行:<code>docker ps -a</code></p>
-<p><img src="http://docker-1253141962.costj.myqcloud.com/ps-a.png?sign=xAbLGlJfJ14Hi5A5Bz4wl+AOQMVhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTE4NjQwMTAxODMmZj0vcHMtYS5wbmcmYj1kb2NrZXI=" alt="ps -a"><br>从结果上看,可以发现jenkins的容器在启动后自动退出了。可以通过<code>docker logs jenkins_node</code>查看日志。错误日志如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">touch: cannot touch ‘/var/jenkins_home/copy_reference_file.log’: Permission denied</div><div class="line">Can not write to /var/jenkins_home/copy_reference_file.log. Wrong volume permissions?</div></pre></td></tr></table></figure>
-<p>通过查看<code>/var/jenkins_home</code>的目录权限可以发现,jenkins容器的当前用户是<code>jenkins</code>而且<code>/var/jenkins_home</code>目录是属于<code>jenkins</code>用户拥有的。而当映射本地数据卷时，<code>/var/jenkins_node</code>目录的拥有者变成了root用户,所以会出现<code>Permission denied</code>的问题。解决方式:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown 1000 /var/jenkins_node/</div></pre></td></tr></table></figure>
-<p>再次启动jenkins:<code>docker start jenkins_node</code></p>
-<p><img src="http://docker-1253141962.costj.myqcloud.com/success.png?sign=XdLGMxAuOVQVYbxQYGbYkN18zf9hPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTMyNTUzODM2NiZmPS9zdWNjZXNzLnBuZyZiPWRvY2tlcg==" alt="success"></p>
-</li>
-</ul>
-<ol>
-<li>浏览器访问<a href="http://host:8082" target="_blank" rel="external">http://host:8082</a>。</li>
-<li>根据界面提示,打开initialAdminPassword文件,将initialAdminPassword文件内容粘贴到Administrator password里。</li>
-<li>选择安装Jenkins推荐插件安装。如果对jenkins很熟悉就随意了。</li>
-<li>等待安装完成,设置admin user。</li>
-</ol>
-<p>基本配置结束,下面开始进行Node项目的<code>DockerFile</code>的配置。</p>
-<p>这里我选用了体积更小的基于<code>alpine</code>版本的Node镜像。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">FROM node:4-alpine</div><div class="line">RUN mkdir -p /var/app/loopback-rmyy</div><div class="line">WORKDIR /var/app/loopback-rmyy</div><div class="line">COPY . /var/app/loopback-rmyy</div><div class="line">RUN npm i</div><div class="line">RUN npm i -g pm2</div><div class="line">EXPOSE 3000</div><div class="line">CMD pm2 start server/server.js --name loopback-rmyy -o logs/out.log -e logs/err.log --no-daemon</div></pre></td></tr></table></figure>
-<h3 id="Jenkins配置"><a href="#Jenkins配置" class="headerlink" title="Jenkins配置"></a>Jenkins配置</h3><h4 id="安装Publish-Over-SSH插件-用与两台服务器进行SSH连接"><a href="#安装Publish-Over-SSH插件-用与两台服务器进行SSH连接" class="headerlink" title="安装Publish Over SSH插件(用与两台服务器进行SSH连接)"></a>安装Publish Over SSH插件(用与两台服务器进行SSH连接)</h4><ol>
-<li>首页，点击系统管理 –&gt; 管理插件 –&gt; 可选插件<br><img src="http://docker-1253141962.costj.myqcloud.com/pulgine.png?sign=HnGEnjfKyYfJcdELh219pPtH0bVhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTU3NjcyNDA3MiZmPS9wdWxnaW5lLnBuZyZiPWRvY2tlcg==" alt="pulgine"></li>
-<li>等待安装完成</li>
-<li>系统设置</li>
-</ol>
-<blockquote>
-<p>首页，点击系统管理 –&gt; 系统设置<br>拉到最下面找到 <code>Publish over SSH</code> , 设置服务器的SSH信息</p>
-</blockquote>
-<p><img src="http://docker-1253141962.costj.myqcloud.com/config.png?sign=pCaAo7/mdnzYQzmJOB6oTJPru79hPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTI4MjMxNjk5MSZmPS9jb25maWcucG5nJmI9ZG9ja2Vy" alt="config"></p>
-<blockquote>
-<p><code>key</code>填写系统私钥,用于免密码登录另一服务器,需要将公钥配置到另一服务器,如果系统中没有ssh文件,可通过<code>ssh-keygen -t rsa</code>命令生成两个文件：<code>id_rsa</code>和<code>id_rsa.pub</code></p>
-</blockquote>
-<h3 id="项目配置"><a href="#项目配置" class="headerlink" title="项目配置"></a>项目配置</h3><ol>
-<li>首页，点击左上角”新建”</li>
-<li>General： 只填 项目名称即可</li>
-</ol>
-<p><img src="http://docker-1253141962.costj.myqcloud.com/general.png?sign=YZOCjrtSNmqLbzeEaPC0Gq8oVrZhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTE5OTMwNjUyNDQmZj0vZ2VuZXJhbC5wbmcmYj1kb2NrZXI=" alt="general"></p>
-<ol>
-<li>源码管理： 填写Git信息</li>
-</ol>
-<p><img src="http://docker-1253141962.costj.myqcloud.com/gitmanager.png?sign=NNW2GhE3ZEizh/lVnM1bC26YwUNhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTM2MTc2Mjg5OSZmPS9naXRtYW5hZ2VyLnBuZyZiPWRvY2tlcg==" alt="gitmanager"></p>
-<ol>
-<li>构建项目</li>
-</ol>
-<blockquote>
-<p>添加构建步骤</p>
-</blockquote>
-<p><img src="http://docker-1253141962.costj.myqcloud.com/step.png?sign=+cOBdqfBB5uwc6Nx3VEiD4ojOf5hPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTQ0NDI3NTkxNiZmPS9zdGVwLnBuZyZiPWRvY2tlcg==" alt="step"></p>
-<blockquote>
-<p>填写git信息后Jenkins会将代码拉取下来,并将代码存放于工作空间<code>/var/jenkins_home/workspace</code>文件下。<br>添加<code>execute shell</code>步骤进行本地处理,在此只做了代码压缩。</p>
-</blockquote>
-<p><img src="http://docker-1253141962.costj.myqcloud.com/executeshell.png?sign=3PbH1WCwzUm9mQCmJh+70f0guqdhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTczNzYzNDYzMyZmPS9leGVjdXRlc2hlbGwucG5nJmI9ZG9ja2Vy" alt="executeshell"><br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tar -zcvf /tmp/loopback-rmyy.tar.gz -C /var/jenkins_home/workspace loopback-rmyy</div><div class="line">mv /tmp/loopback-rmyy.tar.gz /var/jenkins_home/workspace/loopback-rmyy</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>通过ssh传输文件到目标服务器,并构建docker容器启动。</p>
-</blockquote>
-<p><img src="http://docker-1253141962.costj.myqcloud.com/send.png?sign=OpUfx2h6viZmrsVrqDWBUz4xBv5hPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTE2OTYwODc4NDYmZj0vc2VuZC5wbmcmYj1kb2NrZXI=" alt="send"></p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">tar -zxvf /var/jenkins_node/loopback-rmyy/loopback-rmyy.tar.gz -C /var/jenkins_node/loopback-rmyy \</div><div class="line">	&amp;&amp; sudo docker stop loopback-rmyy || true \</div><div class="line">    &amp;&amp; sudo docker rm loopback-rmyy || true \</div><div class="line">    &amp;&amp; cd /var/jenkins_node/loopback-rmyy/loopback-rmyy \</div><div class="line">    &amp;&amp; docker build -t wangze/loopback_rmyy:one . \</div><div class="line">    &amp;&amp; docker run -d -p 3001:3000 -v /var/www/loopback-rmyy/logs:/var/app/loopback-rmyy/logs wangze/loopback_rmyy:one --name loopback-rmyy</div></pre></td></tr></table></figure>
-<ol>
-<li>保存，返回到首页</li>
-<li>选择刚刚创建的项目，点击<code>立即构建</code></li>
-</ol>
-<blockquote>
-<p>此时另一台服务器上，<code>/var/jenkins_node/loopback-rmyy</code>文件夹<br>构建成功，浏览器输入 <a href="http://host:3001" target="_blank" rel="external">http://host:3001</a> 能看到下图内容</p>
-</blockquote>
-<p><img src="http://docker-1253141962.costj.myqcloud.com/loopback.png?sign=To8pLEy54BmYYfqPIoomN5khn/lhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTUxODAzMzI3MSZmPS9sb29wYmFjay5wbmcmYj1kb2NrZXI=" alt="loopback"></p>
-<h3 id="设置webhooks自动部署"><a href="#设置webhooks自动部署" class="headerlink" title="设置webhooks自动部署"></a>设置webhooks自动部署</h3><blockquote>
-<p>通过设置webhooks自动部署,可以使gitlab监听push事件,通知jenkins自动构建并启动项目</p>
-</blockquote>
-<ol>
-<li>首页 –&gt; 用户 –&gt; 设置 –&gt; show API Token</li>
-</ol>
-<p><img src="http://docker-1253141962.costj.myqcloud.com/token.png?sign=tWx3XCrFgtDfaP+i58LMu9EPKZphPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTEzODEwMjc3OTYmZj0vdG9rZW4ucG5nJmI9ZG9ja2Vy" alt="token"></p>
-<ol>
-<li>返回首页 –&gt; node –&gt; 配置 –&gt; 构建触发器 –&gt; 选择 <code>触发远程构建</code> –&gt;粘贴<code>API Token</code>内容到<code>身份验证令牌</code></li>
-</ol>
-<p><img src="http://docker-1253141962.costj.myqcloud.com/chufa.png?sign=gnzMYWWMC0TSEpKDQgXqwrXA2nhhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTI5MDYyMTE0MyZmPS9jaHVmYS5wbmcmYj1kb2NrZXI=" alt="chufa"></p>
-<ol>
-<li>登陆gitlab平台，找到项目，选择管理，选择webhook</li>
-</ol>
-<p><img src="http://docker-1253141962.costj.myqcloud.com/webhooks.png?sign=BhzDfqGmVYhno/0fzDUSL+5Z5OlhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTk0NTQwNjQ1MCZmPS93ZWJob29rcy5wbmcmYj1kb2NrZXI=" alt="webhooks"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://wangze1994:db71fbfe03c0ec4892d414f586b419f7@host:8082/job/loopback-rmyy/build</div></pre></td></tr></table></figure>
-<ol>
-<li>此时你<code>git push</code>，会发现jenkins并没有自动构建，是因为jenkins的安全策略导致的，还需要如下设置</li>
-</ol>
-<blockquote>
-<p>首页 –&gt; 系统管理 –&gt; Configure Global Security</p>
-</blockquote>
-<p><img src="http://docker-1253141962.costj.myqcloud.com/anquan.png?sign=M9o0hK9dGSQM/3JOks7NdCu0QHlhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTExMjAzMTg3MDkmZj0vYW5xdWFuLnBuZyZiPWRvY2tlcg==" alt="anquan"></p>
-<p>至此，已完成 git push 后，在 gitlab 中点击test可以测试 jenkins 自动构建自动部署。</p>
-
-          
+          <h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><blockquote>
+<p>两台ubuntu服务器 (一台搭建Jenkins客户端服务,另一台作为生产环境)<br>服务器安装开通ssh<br>服务器安装Docker(<a href="https://docs.docker.com/engine/installation/linux/">linux服务器安装教程</a>)<br>docker镜像平台为dockerhub(使用<a href="http://www.daocloud.io/">Daocloud</a>加速器)<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/01/05/搭建Docker-Jenkins-Node-js自动化部署环境/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1518,7 +1545,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1526,7 +1553,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1535,7 +1562,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

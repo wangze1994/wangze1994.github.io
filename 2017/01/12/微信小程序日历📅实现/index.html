@@ -1,0 +1,759 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="微信小程序,CSS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="背景1月9号小程序正式上线,在使用携程去哪儿等小程序过后,决定自己做一个小程序练练手,鉴于只是为了练手小程序前端写法所以使用了公司的挂号API。小程序主打功能的简洁,所以自己也是尽量简化了原有APP的挂号流程。过程中,想要将预约挂号做成日历形式,更加直观的显示号源信息。
+实现效果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序日历📅实现">
+<meta property="og:url" content="https://wangze1994.github.io/2017/01/12/微信小程序日历📅实现/index.html">
+<meta property="og:site_name" content="🌞">
+<meta property="og:description" content="背景1月9号小程序正式上线,在使用携程去哪儿等小程序过后,决定自己做一个小程序练练手,鉴于只是为了练手小程序前端写法所以使用了公司的挂号API。小程序主打功能的简洁,所以自己也是尽量简化了原有APP的挂号流程。过程中,想要将预约挂号做成日历形式,更加直观的显示号源信息。
+实现效果">
+<meta property="og:image" content="http://docker-1253141962.costj.myqcloud.com/rili.png?sign=vIjO8/+Y6TQhZ+4VxVeMwjvlB/9hPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjM0MTA2JnQ9MTQ4NDY0MjEwNiZyPTEyNDY3MjA0ODcmZj0vcmlsaS5wbmcmYj1kb2NrZXI=">
+<meta property="og:image" content="http://docker-1253141962.costj.myqcloud.com/table.png?sign=t4NhmNIpMPJyMUvxLNUeaCoualxhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjM0MTA2JnQ9MTQ4NDY0MjEwNiZyPTY4NzEzODg4NCZmPS90YWJsZS5wbmcmYj1kb2NrZXI=">
+<meta property="og:updated_time" content="2017-01-17T08:38:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信小程序日历📅实现">
+<meta name="twitter:description" content="背景1月9号小程序正式上线,在使用携程去哪儿等小程序过后,决定自己做一个小程序练练手,鉴于只是为了练手小程序前端写法所以使用了公司的挂号API。小程序主打功能的简洁,所以自己也是尽量简化了原有APP的挂号流程。过程中,想要将预约挂号做成日历形式,更加直观的显示号源信息。
+实现效果">
+<meta name="twitter:image" content="http://docker-1253141962.costj.myqcloud.com/rili.png?sign=vIjO8/+Y6TQhZ+4VxVeMwjvlB/9hPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjM0MTA2JnQ9MTQ4NDY0MjEwNiZyPTEyNDY3MjA0ODcmZj0vcmlsaS5wbmcmYj1kb2NrZXI=">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://wangze1994.github.io/2017/01/12/微信小程序日历📅实现/"/>
+
+  <title> 微信小程序日历📅实现 | 🌞 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?4426c9da592ad598f4ca17d232276ee8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">🌞</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                微信小程序日历📅实现
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-12T16:01:57+08:00" content="2017-01-12">
+              2017-01-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/微信小程序/" itemprop="url" rel="index">
+                    <span itemprop="name">微信小程序</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/12/微信小程序日历📅实现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/12/微信小程序日历📅实现/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">本文总阅读量
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>1月9号小程序正式上线,在使用携程去哪儿等小程序过后,决定自己做一个小程序练练手,鉴于只是为了练手小程序前端写法所以使用了公司的挂号API。小程序主打功能的简洁,所以自己也是尽量简化了原有APP的挂号流程。过程中,想要将预约挂号做成日历形式,更加直观的显示号源信息。</p>
+<h3 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h3><p><img src="http://docker-1253141962.costj.myqcloud.com/rili.png?sign=vIjO8/+Y6TQhZ+4VxVeMwjvlB/9hPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjM0MTA2JnQ9MTQ4NDY0MjEwNiZyPTEyNDY3MjA0ODcmZj0vcmlsaS5wbmcmYj1kb2NrZXI=" alt="rili"><br><a id="more"></a></p>
+<h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><p>首先遇到的小困难是小程序的组件中并没有对表格的实现。所以要先自己手动实现一个表格。</p>
+<p>不多说,直接上代码</p>
+<ul>
+<li>wxml代码：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;view class=&quot;table&quot;&gt;</div><div class="line">    &lt;view class=&quot;tr&quot;&gt;</div><div class="line">            &lt;view class=&quot;th&quot;&gt;日&lt;/view&gt;</div><div class="line">            &lt;view class=&quot;th&quot;&gt;一&lt;/view&gt;</div><div class="line">            &lt;view class=&quot;th&quot;&gt;二&lt;/view&gt;</div><div class="line">            &lt;view class=&quot;th&quot;&gt;三&lt;/view&gt;</div><div class="line">            &lt;view class=&quot;th&quot;&gt;四&lt;/view&gt;</div><div class="line">            &lt;view class=&quot;th&quot;&gt;五&lt;/view&gt;</div><div class="line">            &lt;view class=&quot;th&quot;&gt;六&lt;/view&gt;</div><div class="line">    &lt;/view&gt;</div><div class="line">    &lt;view class=&quot;tr&quot; wx:for=&quot;&#123;&#123;5&#125;&#125;&quot; wx:for-item=&quot;i&quot;&gt;</div><div class="line">        &lt;view class=&quot;td&quot;&gt;&#123;&#123;i&#125;&#125;&lt;/view&gt;</div><div class="line">        &lt;view class=&quot;td&quot;&gt;&#123;&#123;i&#125;&#125;&lt;/view&gt;</div><div class="line">        &lt;view class=&quot;td&quot;&gt;&#123;&#123;i&#125;&#125;&lt;/view&gt;</div><div class="line">        &lt;view class=&quot;td&quot;&gt;&#123;&#123;i&#125;&#125;&lt;/view&gt;</div><div class="line">        &lt;view class=&quot;td&quot;&gt;&#123;&#123;i&#125;&#125;&lt;/view&gt;</div><div class="line">        &lt;view class=&quot;td&quot;&gt;&#123;&#123;i&#125;&#125;&lt;/view&gt;</div><div class="line">        &lt;view class=&quot;td&quot;&gt;&#123;&#123;i&#125;&#125;&lt;/view&gt;</div><div class="line">    &lt;/view&gt;</div><div class="line">&lt;/view&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>wxss代码：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">.tr &#123;</div><div class="line">    width: 100%;</div><div class="line">    display: flex;</div><div class="line">    justify-content: space-between;</div><div class="line">&#125;</div><div class="line">.th,.td &#123;</div><div class="line">    color: #808080;</div><div class="line">    margin: 20rpx;</div><div class="line">    text-align: center;</div><div class="line">    width:100%;</div><div class="line"></div><div class="line">&#125;</div><div class="line">.td &#123;</div><div class="line">    font-weight: 600;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>实现效果</li>
+</ul>
+<p><img src="http://docker-1253141962.costj.myqcloud.com/table.png?sign=t4NhmNIpMPJyMUvxLNUeaCoualxhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjM0MTA2JnQ9MTQ4NDY0MjEwNiZyPTY4NzEzODg4NCZmPS90YWJsZS5wbmcmYj1kb2NrZXI=" alt="table"></p>
+<h4 id="实现日历计算"><a href="#实现日历计算" class="headerlink" title="实现日历计算"></a>实现日历计算</h4><ul>
+<li>js实现:</li>
+</ul>
+<blockquote>
+<p>记录日期，显示的时候，根据dateObj中的日期的年月显示</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">const dateObj = (() =&gt; &#123;</div><div class="line">    let _date = new Date();</div><div class="line">    return &#123;</div><div class="line">      getDate() &#123;</div><div class="line">        return _date;</div><div class="line">      &#125;,</div><div class="line">      setDate(date) &#123;</div><div class="line">        _date = date;</div><div class="line">      &#125;</div><div class="line">    &#125;;</div><div class="line">  &#125;)();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>生成日期数组,表格固定7*6,根据当前月计算日期并计算class类名,生成Object存入数组。例:<code>{text:29,date:20170129,class:otherMonth}</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">const execDateArr = (()=&gt;&#123;</div><div class="line">        return (year,month,firstDay,dateArr) =&gt; &#123;</div><div class="line">                let dateJson = &#123;&#125;;</div><div class="line">                const _thisDay = new Date(year, month - 1, i + 1 - firstDay.getDay());</div><div class="line">                const _thisDayStr = getDateStr(_thisDay);</div><div class="line">                dateJson.text = _thisDay.getDate();</div><div class="line">                dateJson.date = _thisDayStr;</div><div class="line">                if(_thisDayStr == getDateStr(new Date())) &#123;</div><div class="line">                        dateJson.class = &apos;currentDay&apos;;</div><div class="line">                &#125;else if(_thisDayStr.substr(0, 6) == getDateStr(firstDay).substr(0, 6)) &#123;</div><div class="line">                        dateJson.class = &apos;currentMonth&apos;;</div><div class="line">                &#125;else &#123;</div><div class="line">                        dateJson.class = &apos;otherMonth&apos;;</div><div class="line">                &#125;</div><div class="line">                dateArr.push(dateJson);</div><div class="line">        &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>计算日期数组</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">const _year = dateObj.getDate().getFullYear();</div><div class="line">const _month = dateObj.getDate().getMonth() + 1;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>循环执行计算函数,并将生成数组写入data</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">for(var i = 0; i &lt; 42; i++) &#123;</div><div class="line">    execDateArr(_year,_month,_firstDay,dateArr);</div><div class="line">    &#125;</div><div class="line">self.setData(&#123;</div><div class="line">    dateArr</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>处理wxml代码(使用<code>scroll-view</code>组件,创建滚动视图):</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;swiper style=&quot;height:600rpx;&quot; bindchange=&quot;swipMonth&quot;&gt;</div><div class="line">    &lt;swiper-item&gt;</div><div class="line">        &lt;view class=&quot;tr&quot; wx:for=&quot;&#123;&#123;6&#125;&#125;&quot; wx:for-item=&quot;i&quot; wx:key=&quot;*this&quot;&gt;</div><div class="line">            &lt;view class=&quot;td &#123;&#123;dateArr[7*i + j].class&#125;&#125; &#123;&#123;j == 2 ? &apos;has-schedule&apos; : &apos;&apos;&#125;&#125;&quot; wx:for=&quot;&#123;&#123;7&#125;&#125;&quot; wx:for-item=&quot;j&quot; wx:key=&quot;*this&quot;&gt;&#123;&#123;j == 2 ? &apos;约&apos; : dateArr[7*i + j].text&#125;&#125;&lt;/view&gt;</div><div class="line">        &lt;/view&gt;</div><div class="line">    &lt;/swiper-item&gt;</div><div class="line">    &lt;swiper-item&gt;</div><div class="line">        &lt;view class=&quot;tr&quot; wx:for=&quot;&#123;&#123;6&#125;&#125;&quot; wx:for-item=&quot;i&quot; wx:key=&quot;*this&quot;&gt;</div><div class="line">            &lt;view class=&quot;td &#123;&#123;nextDateArr[7*i + j].class&#125;&#125; &#123;&#123;j == 2 ? &apos;has-schedule&apos; : &apos;&apos;&#125;&#125;&quot; wx:for=&quot;&#123;&#123;7&#125;&#125;&quot; wx:for-item=&quot;j&quot; wx:key=&quot;*this&quot;&gt;&#123;&#123;j == 2 ? &apos;约&apos; : nextDateArr[7*i + j].text&#125;&#125;&lt;/view&gt;</div><div class="line">        &lt;/view&gt;</div><div class="line">    &lt;/swiper-item&gt;</div><div class="line">&lt;/swiper&gt;</div></pre></td></tr></table></figure>
+<p>以上就是在微信小程序中实现一个日历的全部过程,该项目<a href="https://github.com/wangze1994/ihospital-weapp" target="_blank" rel="external">github地址</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果你喜欢！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://photo-1253141962.costj.myqcloud.com/wechat-reward.jpg" alt="风和日丽王泽泽泽。 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://photo-1253141962.costj.myqcloud.com/alipay-reward.jpg" alt="风和日丽王泽泽泽。 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/微信小程序/" rel="tag">#微信小程序</a>
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/05/搭建Docker-Jenkins-Node-js自动化部署环境/" rel="next" title="搭建Docker+Jenkins+Node.js自动化部署环境">
+                <i class="fa fa-chevron-left"></i> 搭建Docker+Jenkins+Node.js自动化部署环境
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/12/微信小程序日历📅实现/"
+           data-title="微信小程序日历📅实现" data-url="https://wangze1994.github.io/2017/01/12/微信小程序日历📅实现/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://photo-1253141962.costj.myqcloud.com/avatar.JPG"
+               alt="风和日丽王泽泽泽。" />
+          <p class="site-author-name" itemprop="name">风和日丽王泽泽泽。</p>
+          <p class="site-description motion-element" itemprop="description">不抽烟,不喝酒,不和女孩儿并排走😁</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wangze1994" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3959668985/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现效果"><span class="nav-number">2.</span> <span class="nav-text">实现效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现过程"><span class="nav-number">3.</span> <span class="nav-text">实现过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实现日历计算"><span class="nav-number">3.1.</span> <span class="nav-text">实现日历计算</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">风和日丽王泽泽泽。</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv">本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wz-hexo-blog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

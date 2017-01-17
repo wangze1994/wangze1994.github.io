@@ -85,21 +85,13 @@
 
 
 <meta name="description" content="准备
-两台ubuntu服务器 (一台搭建Jenkins客户端服务,另一台作为生产环境)服务器安装开通ssh服务器安装Docker(linux服务器安装教程)docker镜像平台为dockerhub(使用Daocloud加速器)
-
-开始
-服务器拉取最新Jenkins镜像: docker pull jenkins:latest
-服务器运行Jenkins容器:sudo docker run -d --n">
+两台ubuntu服务器 (一台搭建Jenkins客户端服务,另一台作为生产环境)服务器安装开通ssh服务器安装Docker(linux服务器安装教程)docker镜像平台为dockerhub(使用Daocloud加速器)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建Docker+Jenkins+Node.js自动化部署环境">
 <meta property="og:url" content="https://wangze1994.github.io/2017/01/05/搭建Docker-Jenkins-Node-js自动化部署环境/index.html">
 <meta property="og:site_name" content="🌞">
 <meta property="og:description" content="准备
-两台ubuntu服务器 (一台搭建Jenkins客户端服务,另一台作为生产环境)服务器安装开通ssh服务器安装Docker(linux服务器安装教程)docker镜像平台为dockerhub(使用Daocloud加速器)
-
-开始
-服务器拉取最新Jenkins镜像: docker pull jenkins:latest
-服务器运行Jenkins容器:sudo docker run -d --n">
+两台ubuntu服务器 (一台搭建Jenkins客户端服务,另一台作为生产环境)服务器安装开通ssh服务器安装Docker(linux服务器安装教程)docker镜像平台为dockerhub(使用Daocloud加速器)">
 <meta property="og:image" content="http://docker-1253141962.costj.myqcloud.com/ps-a.png?sign=xAbLGlJfJ14Hi5A5Bz4wl+AOQMVhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTE4NjQwMTAxODMmZj0vcHMtYS5wbmcmYj1kb2NrZXI=">
 <meta property="og:image" content="http://docker-1253141962.costj.myqcloud.com/success.png?sign=XdLGMxAuOVQVYbxQYGbYkN18zf9hPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTMyNTUzODM2NiZmPS9zdWNjZXNzLnBuZyZiPWRvY2tlcg==">
 <meta property="og:image" content="http://docker-1253141962.costj.myqcloud.com/pulgine.png?sign=HnGEnjfKyYfJcdELh219pPtH0bVhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTU3NjcyNDA3MiZmPS9wdWxnaW5lLnBuZyZiPWRvY2tlcg==">
@@ -114,15 +106,11 @@
 <meta property="og:image" content="http://docker-1253141962.costj.myqcloud.com/chufa.png?sign=gnzMYWWMC0TSEpKDQgXqwrXA2nhhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTI5MDYyMTE0MyZmPS9jaHVmYS5wbmcmYj1kb2NrZXI=">
 <meta property="og:image" content="http://docker-1253141962.costj.myqcloud.com/webhooks.png?sign=BhzDfqGmVYhno/0fzDUSL+5Z5OlhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTk0NTQwNjQ1MCZmPS93ZWJob29rcy5wbmcmYj1kb2NrZXI=">
 <meta property="og:image" content="http://docker-1253141962.costj.myqcloud.com/anquan.png?sign=M9o0hK9dGSQM/3JOks7NdCu0QHlhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTExMjAzMTg3MDkmZj0vYW5xdWFuLnBuZyZiPWRvY2tlcg==">
-<meta property="og:updated_time" content="2017-01-17T07:58:15.000Z">
+<meta property="og:updated_time" content="2017-01-17T08:36:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建Docker+Jenkins+Node.js自动化部署环境">
 <meta name="twitter:description" content="准备
-两台ubuntu服务器 (一台搭建Jenkins客户端服务,另一台作为生产环境)服务器安装开通ssh服务器安装Docker(linux服务器安装教程)docker镜像平台为dockerhub(使用Daocloud加速器)
-
-开始
-服务器拉取最新Jenkins镜像: docker pull jenkins:latest
-服务器运行Jenkins容器:sudo docker run -d --n">
+两台ubuntu服务器 (一台搭建Jenkins客户端服务,另一台作为生产环境)服务器安装开通ssh服务器安装Docker(linux服务器安装教程)docker镜像平台为dockerhub(使用Daocloud加速器)">
 <meta name="twitter:image" content="http://docker-1253141962.costj.myqcloud.com/ps-a.png?sign=xAbLGlJfJ14Hi5A5Bz4wl+AOQMVhPTEyNTMxNDE5NjImaz1BS0lEZ3lJWmpGbjFETExSVVBqc1F0U3dHUlNYVkxEMkxTMVMmZT0xNDg3MjMxMTE1JnQ9MTQ4NDYzOTExNSZyPTE4NjQwMTAxODMmZj0vcHMtYS5wbmcmYj1kb2NrZXI=">
 
 
@@ -368,9 +356,9 @@
 
       
         <h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><blockquote>
-<p>两台ubuntu服务器 (一台搭建Jenkins客户端服务,另一台作为生产环境)<br>服务器安装开通ssh<br>服务器安装Docker(<a href="https://docs.docker.com/engine/installation/linux/" target="_blank" rel="external">linux服务器安装教程</a>)<br>docker镜像平台为dockerhub(使用<a href="http://www.daocloud.io/" target="_blank" rel="external">Daocloud</a>加速器)</p>
-</blockquote>
-<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><ol>
+<p>两台ubuntu服务器 (一台搭建Jenkins客户端服务,另一台作为生产环境)<br>服务器安装开通ssh<br>服务器安装Docker(<a href="https://docs.docker.com/engine/installation/linux/" target="_blank" rel="external">linux服务器安装教程</a>)<br>docker镜像平台为dockerhub(使用<a href="http://www.daocloud.io/" target="_blank" rel="external">Daocloud</a>加速器)<br><a id="more"></a></p>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3></blockquote>
+<ol>
 <li>服务器拉取最新Jenkins镜像: <code>docker pull jenkins:latest</code></li>
 <li>服务器运行Jenkins容器:<code>sudo docker run -d --name jenkins_node -p 8082:8080 -p 50000:50000 -v /var/jenkins_node:/var/jenkins_home jenkins:latest</code></li>
 </ol>
@@ -531,6 +519,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/01/12/微信小程序日历📅实现/" rel="prev" title="微信小程序日历📅实现">
+                微信小程序日历📅实现 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -601,7 +593,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -609,7 +601,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -618,7 +610,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
